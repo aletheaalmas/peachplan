@@ -8,7 +8,6 @@ export function App() {
       <Profile />
       <Profile />
       <Profile />
-      <Profile />
     </div>
   );
 }
