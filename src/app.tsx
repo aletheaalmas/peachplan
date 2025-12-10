@@ -1,14 +1,10 @@
-import { Logo, SearchBar } from "./header";
+import { Header } from "./header";
 import { Projects } from "./projects";
 
 export function App() {
   return (
-    <div>
-      <Logo
-        name="Peach Plan Logo"
-      />
-      <SearchBar/>
-
+    <div className="min-h-screen bg-white">
+      <Header />
       <Projects />
     </div>
   );
