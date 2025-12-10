@@ -1,4 +1,4 @@
-import { Logo } from "./header";
+import { Logo, SearchBar } from "./header";
 import { Projects } from "./projects";
 
 export function App() {
@@ -7,7 +7,7 @@ export function App() {
       <Logo
         name="Peach Plan Logo"
       />
-      
+      <SearchBar/>
 
       <Projects />
     </div>
