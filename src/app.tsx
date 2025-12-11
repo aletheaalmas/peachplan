@@ -8,7 +8,7 @@ export function App() {
     <div className="bg-stone-50">
       <header>
         <div className="w-full border-b border-gray-200 bg-red-200">
-          <div className="max-w-4xl mx-auto flex justify-between items-center px-3 py-2">
+          <div className="mx-auto flex max-w-4xl items-center justify-between px-3 py-2">
             <img
               className="flex gap-3"
               src="/logo.svg"
@@ -20,9 +20,9 @@ export function App() {
             <SearchBar />
             <div className="flex justify-between gap-4">
               <Button label="+ Add Project" />
-              <span className="w-10 h-10 rounded-full overflow-hidden bg-gray-200">
+              <span className="h-10 w-10 overflow-hidden rounded-full bg-gray-200">
                 <img
-                  className="p-1 object-cover"
+                  className="object-cover p-1"
                   src="/avatar.svg"
                   alt="User Avatar"
                   width={50}
@@ -33,9 +33,9 @@ export function App() {
           </div>
         </div>
       </header>
-      <main className="p-4 max-w-4xl mx-auto">
+      <main className="mx-auto max-w-4xl p-4">
         <div>
-        <WelcomeSection />
+          <WelcomeSection />
         </div>
 
         <Projects />
