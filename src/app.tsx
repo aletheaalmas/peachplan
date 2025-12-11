@@ -15,7 +15,18 @@ export function App() {
           />
 
           <SearchBar />
-          <Button label="+ Add Project"/>
+          <div className="flex justify-between gap-4">
+            <Button label="+ Add Project" />
+            <span className="w-10 h-10 rounded-full bg-gray-200">
+              <img
+                className="flex p-1"
+                src="/avatar.svg"
+                alt="User Avatar"
+                width={50}
+                height={30}
+              />
+            </span>
+          </div>
         </div>
       </header>
     </div>
