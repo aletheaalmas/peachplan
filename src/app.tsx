@@ -1,16 +1,18 @@
-import { Header } from "./header";
-import { WelcomeSection } from "./welcome-section";
-import { Projects } from "./projects";
+import { SearchBar } from "./search-bar";
+
 
 export function App() {
   return (
     <div>
-      <div>
-        <img src="/logo.svg" alt="Peach Plan Logo" />
-      </div>
-      <Header />
-      <WelcomeSection />
-      <Projects />
+    <header>
+      <div className="w-full flex justify-between px-3 py-2 border-b border-gray-200 bg-red-200">
+        <img className="flex gap-3" src="/logo.svg" alt="Peach Plan Logo" width={50} height={30} />
+       
+        <SearchBar />
+        
+        </div>
+      </header>
+
     </div>
   );
 }
