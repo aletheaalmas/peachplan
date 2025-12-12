@@ -21,7 +21,7 @@ export function App() {
           <SearchBar />
 
           <div className="flex justify-between gap-4">
-            <Button label="+ Add Project" />
+            <Button>+ Add Project</Button>
             <span className="h-10 w-10 overflow-hidden rounded-full bg-gray-200">
               <img
                 className="object-cover p-1"
