@@ -22,11 +22,7 @@ export function Projects() {
       <ul>
         {dataProjects.map((project) => (
           <li key={project.id}>
-            <ProjectItem
-              title={project.title}
-              isDone={project.isDone}
-              priority={project.priority}
-            />
+            <ProjectItem project={project} />
           </li>
         ))}
       </ul>
@@ -34,23 +30,15 @@ export function Projects() {
   );
 }
 
-export function ProjectItem({
-  title,
-  isDone,
-  priority,
-}: {
-  title: string;
-  isDone: boolean;
-  priority: string;
-}) {
-  if (isDone) {
+export function ProjectItem({ project }: { project: Project }) {
+  if (project.isDone) {
     return null;
   }
 
   return (
     <div>
-      <h2>{title}</h2>
-      <p>{priority}</p>
+      <h2>{project.title}</h2>
+      <p>{project.priority}</p>
     </div>
   );
 }
