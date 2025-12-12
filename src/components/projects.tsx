@@ -1,10 +1,5 @@
-const dataProjects = [
-  { id: 1, title: "Personal Web", isDone: true, priority: "p1" },
-  { id: 2, title: "Contact Management", isDone: true, priority: "p2" },
-  { id: 3, title: "Task Management", isDone: false, priority: "p2" },
-  { id: 4, title: "Information API", isDone: false, priority: "p3" },
-  { id: 4, title: "Simple Ecommerce", isDone: false, priority: "p4" },
-];
+import { dataProjects } from "../modules/project/data";
+import type { Project } from "../modules/project/type";
 
 export function Projects() {
   return (
@@ -12,33 +7,24 @@ export function Projects() {
       <h2>Projects</h2>
       <ul>
         {dataProjects.map((project) => (
-          <ProjectItem
-            title={project.title}
-            isDone={project.isDone}
-            priority={project.priority}
-          />
+          <li key={project.id}>
+            <ProjectItem project={project} />
+          </li>
         ))}
       </ul>
     </div>
   );
 }
 
-export function ProjectItem({
-  title,
-  isDone,
-  priority,
-}: {
-  title: string;
-  isDone: boolean;
-  priority: string;
-}) {
-  if (isDone) {
+export function ProjectItem({ project }: { project: Project }) {
+  if (project.isDone) {
     return null;
   }
 
   return (
-    <li>
-      {title}, {priority}
-    </li>
+    <div>
+      <h2>{project.title}</h2>
+      <p>{project.priority}</p>
+    </div>
   );
 }
