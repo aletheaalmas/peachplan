@@ -1,6 +1,6 @@
 import { SearchBar } from "./components/search-bar";
 import { Button } from "./components/button";
-import { WelcomeSection } from "./components/welcome-section";
+import { Welcome } from "./components/welcome";
 import { Projects } from "./components/projects";
 
 export function App() {
@@ -36,10 +36,7 @@ export function App() {
       </header>
 
       <main className="mx-auto max-w-4xl p-4">
-        <div>
-          <WelcomeSection />
-        </div>
-
+        <Welcome />
         <Projects />
       </main>
     </>

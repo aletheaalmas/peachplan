@@ -1,4 +1,4 @@
-export function WelcomeSection() {
+export function Welcome() {
   const today = new Date();
   const fullDate = today.toLocaleDateString("en-US", {
     weekday: "long",
