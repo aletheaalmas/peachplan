@@ -1,4 +1,13 @@
-const dataProjects = [
+export type Project = {
+  id: number;
+  title: string;
+  isDone: boolean;
+  priority: "p1" | "p2" | "p3" | "p4";
+};
+
+export type Projects = Project[];
+
+const dataProjects: Projects = [
   { id: 1, title: "Personal Web", isDone: true, priority: "p1" },
   { id: 2, title: "Contact Management", isDone: true, priority: "p2" },
   { id: 3, title: "Task Management", isDone: false, priority: "p2" },
