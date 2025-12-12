@@ -22,15 +22,15 @@ export function App() {
 
           <div className="flex justify-between gap-4">
             <Button>+ Add Project</Button>
-            <span className="h-10 w-10 overflow-hidden rounded-full bg-gray-200">
+            <button className="h-10 w-10 overflow-hidden rounded-full bg-red-100">
               <img
-                className="object-cover p-1"
+                className="object-cover"
                 src="/avatar.svg"
                 alt="User Avatar"
                 width={50}
-                height={30}
+                height={50}
               />
-            </span>
+            </button>
           </div>
         </nav>
       </header>
