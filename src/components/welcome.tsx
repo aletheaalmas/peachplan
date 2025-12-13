@@ -1,14 +1,13 @@
 export function Welcome() {
   const today = new Date();
   const fullDate = today.toLocaleDateString("en-US", {
-    weekday: "long",
     month: "long",
     day: "numeric",
     year: "numeric",
   });
 
-  const month = today.toLocaleDateString("en-US", {
-    month: "long",
+  const weekday = today.toLocaleDateString("en-US", {
+    weekday: "long",
   });
 
   return (
@@ -22,8 +21,8 @@ export function Welcome() {
         </div>
 
         <div className="text-right">
-          <h2 className="text-xl font-semibold">{month}</h2>
-          <p className="text-gray-600">Today is {fullDate}</p>
+          <h2 className="text-xl font-semibold">{weekday}</h2>
+          <p className="text-gray-600">{fullDate}</p>
         </div>
       </div>
     </div>
