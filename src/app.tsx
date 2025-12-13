@@ -5,7 +5,7 @@ import { Projects } from "./components/projects";
 
 export function App() {
   return (
-    <div className="bg-stone-50">
+    <div >
       <header>
         <div className="w-full border-b border-gray-200 bg-red-200">
           <div className="mx-auto flex max-w-4xl items-center justify-between px-3 py-2">
