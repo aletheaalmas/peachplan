@@ -1,9 +1,49 @@
-const dataProjects = [
-  { id: 1, title: "Personal Web", isDone: true, priority: "p1" },
-  { id: 2, title: "Contact Management", isDone: true, priority: "p2" },
-  { id: 3, title: "Task Management", isDone: false, priority: "p2" },
-  { id: 4, title: "Information API", isDone: false, priority: "p3" },
-  { id: 5, title: "Simple Ecommerce", isDone: false, priority: "p4" },
+export type Project = {
+  id: number;
+  title: string;
+  isDone: boolean;
+  priority: "P1" | "P2" | "P3" | "P4";
+  description: string;
+};
+
+export type Projects = Project[];
+
+const dataProjects: Projects = [
+  {
+    id: 1,
+    title: "Personal Web",
+    isDone: true,
+    priority: "P1",
+    description: "Personal website with HTML & CSS",
+  },
+  {
+    id: 2,
+    title: "CRM",
+    isDone: true,
+    priority: "P2",
+    description: "Simple CRM web using tailwind and JavaScript",
+  },
+  {
+    id: 3,
+    title: "Task Management",
+    isDone: false,
+    priority: "P3",
+    description: "Project and task management using React",
+  },
+  {
+    id: 4,
+    title: "Information API",
+    isDone: false,
+    priority: "P3",
+    description: "Soon",
+  },
+  {
+    id: 5,
+    title: "Simple Ecommerce",
+    isDone: false,
+    priority: "P4",
+    description: "Soon",
+  },
 ];
 
 export function Projects() {
@@ -13,11 +53,12 @@ export function Projects() {
       <ul>
         {dataProjects.map((project) => (
           <li key={project.id}>
-          <ProjectItem
-            title={project.title}
-            isDone={project.isDone}
-            priority={project.priority}
-          />
+            <ProjectItem
+              title={project.title}
+              isDone={project.isDone}
+              priority={project.priority}
+              description={project.description}
+            />
           </li>
         ))}
       </ul>
@@ -29,10 +70,12 @@ export function ProjectItem({
   title,
   isDone,
   priority,
+  description,
 }: {
   title: string;
   isDone: boolean;
   priority: string;
+  description: string;
 }) {
   if (isDone) {
     return null;
@@ -41,6 +84,7 @@ export function ProjectItem({
   return (
     <div>
       <h2>{title}</h2>
+      <p>{description}</p>
       <p>{priority}</p>
     </div>
   );
