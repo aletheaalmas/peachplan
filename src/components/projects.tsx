@@ -3,7 +3,7 @@ const dataProjects = [
   { id: 2, title: "Contact Management", isDone: true, priority: "p2" },
   { id: 3, title: "Task Management", isDone: false, priority: "p2" },
   { id: 4, title: "Information API", isDone: false, priority: "p3" },
-  { id: 4, title: "Simple Ecommerce", isDone: false, priority: "p4" },
+  { id: 5, title: "Simple Ecommerce", isDone: false, priority: "p4" },
 ];
 
 export function Projects() {
@@ -12,11 +12,13 @@ export function Projects() {
       <h2>Projects</h2>
       <ul>
         {dataProjects.map((project) => (
+          <li key={project.id}>
           <ProjectItem
             title={project.title}
             isDone={project.isDone}
             priority={project.priority}
           />
+          </li>
         ))}
       </ul>
     </div>
@@ -37,8 +39,9 @@ export function ProjectItem({
   }
 
   return (
-    <li>
-      {title}, {priority}
-    </li>
+    <div>
+      <h2>{title}</h2>
+      <p>{priority}</p>
+    </div>
   );
 }
