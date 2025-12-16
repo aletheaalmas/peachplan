@@ -20,7 +20,9 @@ export function Projects() {
     <div className="mt-6 grid grid-cols-4 gap-4">
       {status.map((status) => (
         <div key={status} className="rounded-2xl border border-gray-200 p-3">
-          <h3 className="mb-3 text-sm font-semibold text-gray-700">{status}</h3>
+          <h3 className="mb-3 text-center text-sm font-semibold text-gray-700">
+            {status}
+          </h3>
 
           <ul className="space-y-3">
             {dataProjects
