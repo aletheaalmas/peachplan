@@ -33,8 +33,8 @@ export function ProjectItem({ project }: { project: Project }) {
           }).format(project.dueDate)}
         </p>
       </div>
-      <h2 className="text-xl">{project.title}</h2>
-      <p className="text-gray-500">{project.description}</p>
+      <h2 className="mt-2 text-base font-semibold text-gray-800">{project.title}</h2>
+      <p className="mt-1 text-xs text-gray-600">{project.description}</p>
     </div>
   );
 }
