@@ -6,7 +6,7 @@ import { Trash } from "lucide-react";
 export function Projects() {
   return (
     <div className="mt-6 rounded-2xl border border-gray-200 p-6">
-      <ul className="flex flex-wrap gap-6">
+      <ul className="grid grid-cols-[repeat(auto-fill,minmax(16rem,1fr))] gap-6">
         {dataProjects.map((project) => (
           <li key={project.id}>
             <ProjectItem project={project} />
@@ -23,7 +23,7 @@ export function ProjectItem({ project }: { project: Project }) {
   }
 
   return (
-    <div className="h-40 w-64 rounded-2xl bg-red-100 p-4 text-sm">
+    <div className="h-40 w-54 rounded-2xl bg-red-100 p-4 text-sm">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="rounded-md bg-orange-100 px-2 py-0.5 text-xs font-medium text-red-400">
