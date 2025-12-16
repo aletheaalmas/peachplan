@@ -3,8 +3,7 @@ import type { Project } from "../modules/project/type";
 
 export function Projects() {
   return (
-    <div>
-      <h1>Projects</h1>
+    <div className="mt-6 flex flex-row rounded-lg border-2 border-gray-200 p-3">
       <ul>
         {dataProjects.map((project) => (
           <li key={project.id}>
@@ -22,17 +21,18 @@ export function ProjectItem({ project }: { project: Project }) {
   }
 
   return (
-    <div>
-      <h2>{project.title}</h2>
-      <p>{project.description}</p>
-      <p>{project.priority}</p>
-      <p>
-        {new Intl.DateTimeFormat("en-US", {
-          year: "numeric",
-          month: "short",
-          day: "numeric",
-        }).format(project.dueDate)}
-      </p>
+    <div className="m-2 rounded-2xl bg-red-100 p-4 text-xs">
+      <div className="flex flex-row gap-3">
+        <p className="p-2 rounded-lg  bg-orange-100 text-red-400">{project.priority}</p>
+        <p className="p-2 rounded-lg  bg-orange-100 text-red-400">
+          {new Intl.DateTimeFormat("en-US", {
+            month: "short",
+            day: "numeric",
+          }).format(project.dueDate)}
+        </p>
+      </div>
+      <h2 className="text-xl">{project.title}</h2>
+      <p className="text-gray-500">{project.description}</p>
     </div>
   );
 }
