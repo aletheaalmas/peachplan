@@ -39,9 +39,9 @@ export function ProjectForm() {
 
         <Form.Control asChild>
           <textarea
-            required 
+            required
             placeholder="Short project description"
-            className="min-h-[80px] w-full resize-none rounded-lg border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-red-300 focus:ring-1 "
+            className="min-h-[80px] w-full resize-none rounded-lg border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-red-300"
           />
         </Form.Control>
       </Form.Field>
