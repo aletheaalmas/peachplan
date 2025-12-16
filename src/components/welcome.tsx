@@ -11,10 +11,10 @@ export function Welcome() {
   });
 
   return (
-    <div className="mt-2 rounded-lg border-2 border-gray-200 p-3">
+    <div className="mt-2 rounded-2xl border border-gray-200 px-6 py-5">
       <div className="flex items-start justify-between">
         <div>
-          <h2 className="text-2xl font-semibold">Welcome,</h2>
+          <h2 className="text-xl font-semibold">Welcome,</h2>
           <p className="mt-1 text-gray-600">
             Lets get things done, peachfully!
           </p>
