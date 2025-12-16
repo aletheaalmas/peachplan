@@ -1,7 +1,7 @@
 import { dataProjects } from "../modules/project/data";
 import type { Project } from "../modules/project/type";
 import type { ProjectStatus } from "../modules/project/type";
-import { EllipsisVertical } from "lucide-react";
+import { ProjectActions } from "./project-action";
 // import { Pencil } from "lucide-react";
 // import { Trash } from "lucide-react";
 
@@ -63,7 +63,7 @@ export function ProjectItem({ project }: { project: Project }) {
           <button className="hover:text-red-500">
             <Trash size={12} /> */}
           <button className="text-gray-500 hover:text-gray-800">
-            <EllipsisVertical size={12} />
+            <ProjectActions />
           </button>
         </div>
       </div>
