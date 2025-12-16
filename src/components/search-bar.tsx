@@ -1,8 +1,10 @@
+import { Search } from "lucide-react";
+
 export function SearchBar() {
   return (
     <form className="relative w-full max-w-md">
-      <span className="absolute top-1/2 left-3 -translate-y-1/2">
-        <img src="/icons/search.svg" alt="Search Icon" width="15" height="15" />
+      <span className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-500">
+        <Search size={18} />
       </span>
       <input
         type="search"
