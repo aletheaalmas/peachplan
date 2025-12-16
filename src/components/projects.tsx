@@ -1,9 +1,9 @@
 import { dataProjects } from "../modules/project/data";
 import type { Project } from "../modules/project/type";
 import type { ProjectStatus } from "../modules/project/type";
-import { GripVertical } from "lucide-react";
-import { Pencil } from "lucide-react";
-import { Trash } from "lucide-react";
+import { EllipsisVertical } from "lucide-react";
+// import { Pencil } from "lucide-react";
+// import { Trash } from "lucide-react";
 
 const status: ProjectStatus[] = ["To Do", "In Progress", "In Review", "Done"];
 
@@ -45,9 +45,6 @@ export function ProjectItem({ project }: { project: Project }) {
     <div className={`h-40 rounded-2xl p-4 text-sm ${projectCard}`}>
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-1">
-          <span className="text-gray-500 hover:text-gray-800">
-            <GripVertical size={12} />
-          </span>
           <span className="rounded-md bg-orange-100 px-2 py-0.5 text-[10px] font-medium text-red-400">
             {project.priority}
           </span>
@@ -60,11 +57,13 @@ export function ProjectItem({ project }: { project: Project }) {
           </span>
         </div>
         <div className="flex items-center gap-2 text-gray-500">
-          <button className="hover:text-gray-800">
+          {/* <button className="hover:text-gray-800">
             <Pencil size={12} />
           </button>
           <button className="hover:text-red-500">
-            <Trash size={12} />
+            <Trash size={12} /> */}
+          <button className="text-gray-500 hover:text-gray-800">
+            <EllipsisVertical size={12} />
           </button>
         </div>
       </div>
