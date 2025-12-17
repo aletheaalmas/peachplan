@@ -21,7 +21,7 @@ export function ProjectForm() {
 
             <label
               htmlFor="project-name"
-              className="pointer-events-none absolute top-2 top-4 left-4 origin-left text-sm text-xs font-semibold text-gray-500 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-500 peer-focus:top-2 peer-focus:text-xs peer-focus:font-medium peer-focus:text-pink-500"
+              className="pointer-events-none absolute top-2 top-4 left-4 origin-left text-sm text-xs font-semibold text-gray-500 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-500 peer-focus:top-2 peer-focus:text-xs peer-focus:font-medium peer-focus:text-red-400"
             >
               Project Name
             </label>
