@@ -1,6 +1,4 @@
 import { SearchBar } from "./components/search-bar";
-// import { Button } from "./components/button";
-// import { Welcome } from "./components/welcome";
 import { Projects } from "./components/projects";
 import { ProjectForm } from "./components/project-form";
 
@@ -22,7 +20,6 @@ export function App() {
           <SearchBar />
 
           <div className="flex justify-between gap-4">
-            {/* <Button>+ Add Project</Button> */}
             <button className="h-10 w-10 overflow-hidden rounded-full bg-gray-100">
               <img
                 className="object-cover"
@@ -35,9 +32,8 @@ export function App() {
           </div>
         </nav>
       </header>
-      <main className="mx-auto max-w-4xl p-4">
-        {/* <Welcome /> */}
 
+      <main className="mx-auto max-w-4xl p-4">
         <ProjectForm />
 
         <Projects />

@@ -1,5 +1,8 @@
 import * as Form from "@radix-ui/react-form";
-import { Button } from "./button";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 export function ProjectForm() {
   return (
@@ -12,19 +15,8 @@ export function ProjectForm() {
         </div>
         <Form.Control asChild>
           <div className="relative">
-            <input
-              id="project-name"
-              type="text"
-              placeholder=" "
-              className="peer w-full rounded-xl px-4 pt-6 pb-3 text-sm text-gray-800 outline-none"
-            />
-
-            <label
-              htmlFor="project-name"
-              className="pointer-events-none absolute top-2 left-4 origin-left text-sm font-semibold text-gray-500 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-500 peer-focus:top-2 peer-focus:text-xs peer-focus:font-medium peer-focus:text-red-400"
-            >
-              Project Name
-            </label>
+            <Label htmlFor="project-name">Project Name</Label>
+            <Input name="project-name" id="project-name" type="text" />
           </div>
         </Form.Control>
       </Form.Field>
@@ -32,34 +24,13 @@ export function ProjectForm() {
       <Form.Field name="description" className="mb-4">
         <div className="relative">
           <Form.Control asChild>
-            <textarea
-              placeholder="Add some notes or description for this project..."
-              className="min-h-[120px] w-full rounded-xl border border-gray-200 px-4 py-4 text-sm outline-none focus:border-red-300 focus:ring-1 focus:ring-red-300"
-            />
+            <Textarea placeholder="Add some notes or description for this project..." />
           </Form.Control>
 
-          {/* Pills */}
-          <div className="absolute bottom-3 left-4 flex gap-2">
-            <button
-              type="button"
-              className="rounded-full px-3 py-1 text-[10px] text-gray-500 hover:bg-gray-200"
-            >
-              Deadline
-            </button>
-
-            <button
-              type="button"
-              className="rounded-full px-3 py-1 text-[10px] text-gray-500 hover:bg-gray-200"
-            >
-              Priority
-            </button>
-
-            <button
-              type="button"
-              className="rounded-full px-3 py-1 text-[10px] text-gray-500 hover:bg-gray-200"
-            >
-              Stage
-            </button>
+          <div>
+            <Button>Deadline</Button>
+            <Button>Priority</Button>
+            <Button>Status</Button>
           </div>
         </div>
       </Form.Field>
