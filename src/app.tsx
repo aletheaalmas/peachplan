@@ -34,8 +34,6 @@ export function App() {
       </header>
 
       <main className="mx-auto max-w-4xl p-4">
-        {/* <Welcome /> */}
-
         <ProjectForm />
 
         <Projects />
