@@ -10,7 +10,7 @@ export function SearchBar() {
         type="search"
         name="q"
         placeholder="Search your projects"
-        className="w-full rounded-lg border-2 border-gray-300 bg-white py-2 pr-4 pl-10 text-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-red-300 focus:outline-none"
+        className="w-full rounded-lg border-2 border-gray-300 bg-stone-100 py-2 pr-4 pl-10 text-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-red-300 focus:outline-none"
       />
     </form>
   );

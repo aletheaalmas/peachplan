@@ -1,7 +1,7 @@
 import { dataProjects } from "../modules/project/data";
 import type { Project } from "../modules/project/type";
 import type { ProjectStatus } from "../modules/project/type";
-import { ProjectActions } from "./project-action";
+import { ProjectActions } from "./project-actions";
 // import { Pencil } from "lucide-react";
 // import { Trash } from "lucide-react";
 
@@ -19,7 +19,7 @@ export function Projects() {
   return (
     <div className="mt-6 grid grid-cols-4 gap-4">
       {status.map((status) => (
-        <div key={status} className="rounded-2xl border border-gray-200 p-3">
+        <div key={status} className="rounded-2xl border-2 border-gray-200 p-3">
           <h3 className="mb-3 text-center text-sm font-semibold text-gray-700">
             {status}
           </h3>

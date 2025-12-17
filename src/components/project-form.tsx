@@ -3,7 +3,7 @@ import { Button } from "./button";
 
 export function ProjectForm() {
   return (
-    <Form.Root className="w-full rounded-2xl border border-gray-200 p-6">
+    <Form.Root className="w-full rounded-2xl border-2 border-gray-200 p-6">
       <h2 className="mb-4 text-lg font-semibold text-gray-800">Add Project</h2>
 
       {/* Project Name */}
