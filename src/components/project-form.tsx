@@ -16,7 +16,7 @@ export function ProjectForm() {
               id="project-name"
               type="text"
               placeholder=" "
-              className="peer w-full rounded-xl px-4 pt-6 pb-3 text-sm text-gray-800 outline-none focus:border-red-300 focus:ring-1 focus:ring-red-200"
+              className="peer w-full rounded-xl px-4 pt-6 pb-3 text-sm text-gray-800 outline-none focus:ring-1 focus:ring-red-300"
             />
 
             <label
