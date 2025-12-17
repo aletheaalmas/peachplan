@@ -25,9 +25,6 @@ export function ProjectForm() {
             >
               Project Name
             </label>
-            <Form.Message match="valueMissing" className="text-xs text-red-500">
-              Required
-            </Form.Message>
           </div>
         </Form.Control>
       </Form.Field>
