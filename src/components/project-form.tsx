@@ -68,9 +68,11 @@ export function ProjectForm() {
       </Form.Field>
 
       {/* Submit */}
-      <Form.Submit asChild>
-        <Button>+ Add Project</Button>
-      </Form.Submit>
+      <div className="flex justify-end">
+        <Form.Submit asChild>
+          <Button>+ Add Project</Button>
+        </Form.Submit>
+      </div>
     </Form.Root>
   );
 }
