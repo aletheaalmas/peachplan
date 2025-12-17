@@ -33,7 +33,7 @@ export function ProjectForm() {
         <div className="relative">
           <Form.Control asChild>
             <textarea
-              placeholder="You can write your project description here..."
+              placeholder="Add some notes or description for this project..."
               className="min-h-[120px] w-full rounded-xl border border-gray-200 px-4 py-4 text-sm outline-none focus:border-red-300 focus:ring-1 focus:ring-red-300"
             />
           </Form.Control>
