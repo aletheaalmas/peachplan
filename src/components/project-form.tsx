@@ -5,6 +5,11 @@ export function ProjectForm() {
   return (
     <Form.Root className="w-full rounded-2xl border-2 border-gray-200 p-6">
       <Form.Field name="title" className="mb-4">
+        <div className="mb-1 flex items-center justify-between">
+          <Form.Message match="valueMissing" className="text-xs text-red-500">
+            Required
+          </Form.Message>
+        </div>
         <Form.Control asChild>
           <div className="relative">
             <input
