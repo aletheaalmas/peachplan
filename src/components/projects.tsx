@@ -2,8 +2,7 @@ import { dataProjects } from "../modules/project/data";
 import type { Project } from "../modules/project/type";
 import type { ProjectStatus } from "../modules/project/type";
 import { ProjectActions } from "./project-actions";
-// import { Pencil } from "lucide-react";
-// import { Trash } from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 const status: ProjectStatus[] = ["To Do", "In Progress", "In Review", "Done"];
 
@@ -19,21 +18,25 @@ export function Projects() {
   return (
     <div className="mt-6 grid grid-cols-4 gap-4">
       {status.map((status) => (
-        <div key={status} className="rounded-2xl border-2 border-gray-200 p-3">
-          <h3 className="mb-3 text-center text-sm font-semibold text-gray-700">
-            {status}
-          </h3>
+        <Card key={status} className="bg-stone-50">
+          <CardHeader className="p-3 pb-0">
+            <h3 className="text-center text-sm font-semibold text-gray-700">
+              {status}
+            </h3>
+          </CardHeader>
 
-          <ul className="space-y-3">
-            {dataProjects
-              .filter((project) => project.status === status)
-              .map((project) => (
-                <li key={project.id}>
-                  <ProjectItem project={project} />
-                </li>
-              ))}
-          </ul>
-        </div>
+          <CardContent className="space-y-3 p-3">
+            <ul>
+              {dataProjects
+                .filter((project) => project.status === status)
+                .map((project) => (
+                  <li key={project.id}>
+                    <ProjectItem project={project} />
+                  </li>
+                ))}
+            </ul>
+          </CardContent>
+        </Card>
       ))}
     </div>
   );
@@ -57,11 +60,6 @@ export function ProjectItem({ project }: { project: Project }) {
           </span>
         </div>
         <div className="flex items-center gap-2 text-gray-500">
-          {/* <button className="hover:text-gray-800">
-            <Pencil size={12} />
-          </button>
-          <button className="hover:text-red-500">
-            <Trash size={12} /> */}
           <button className="text-gray-500 hover:text-gray-800">
             <ProjectActions />
           </button>
