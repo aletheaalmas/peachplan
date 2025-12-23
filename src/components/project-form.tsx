@@ -1,58 +1,31 @@
-import * as Form from "@radix-ui/react-form";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { FieldLabel } from "@/components/ui/field";
+import { Card } from "@/components/ui/card";
 
 export function ProjectForm() {
   return (
-    <Form.Root className="w-full rounded-2xl border-2 border-gray-200 p-6">
-      <Form.Field name="title" className="mb-4">
-        <div className="mb-1 flex items-center justify-between">
-          <Form.Message match="valueMissing" className="text-xs text-red-500">
-            Required
-          </Form.Message>
+    <Card className="rounded-2xl bg-stone-50 p-6">
+      <form className="space-y-4">
+        <FieldLabel>Project Name</FieldLabel>
+        <Input placeholder="Name your project" />
+        <FieldLabel>Project Description</FieldLabel>
+        <Textarea
+          placeholder="Add some notes or description..."
+          className="min-h-[120px]"
+        />
+
+        <div className="flex gap-2">
+          <Button variant="secondary">Deadline</Button>
+          <Button variant="secondary">Priority</Button>
+          <Button variant="secondary">Status</Button>
         </div>
-        <Form.Control asChild>
-          <div className="relative">
-            <input
-              id="project-name"
-              type="text"
-              placeholder=" "
-              className="peer w-full rounded-xl px-4 pt-6 pb-3 text-sm text-gray-800 outline-none"
-            />
 
-            <label
-              htmlFor="project-name"
-              className="pointer-events-none absolute top-2 left-4 origin-left text-sm font-semibold text-gray-500 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-500 peer-focus:top-2 peer-focus:text-xs peer-focus:font-medium peer-focus:text-red-400"
-            >
-              Project Name
-            </label>
-          </div>
-        </Form.Control>
-      </Form.Field>
-
-      <Form.Field name="description" className="mb-4">
-        <div className="relative">
-          <Form.Control asChild>
-            <textarea
-              placeholder="Add some notes or description for this project..."
-              className="min-h-[120px] w-full rounded-xl border border-gray-200 px-4 py-4 text-sm outline-none focus:border-red-300 focus:ring-1 focus:ring-red-300"
-            />
-          </Form.Control>
-
-          {/* Pills */}
-          <div className="absolute bottom-3 left-4 flex gap-2">
-            <Button variant="secondary">Deadline</Button>
-            <Button variant="secondary">Priority</Button>
-            <Button variant="secondary">Status</Button>
-          </div>
+        <div className="flex justify-end">
+          <Button type="submit">+ Add Project</Button>
         </div>
-      </Form.Field>
-
-      {/* Submit */}
-      <div className="flex justify-end">
-        <Form.Submit asChild>
-          <Button>+ Add Project</Button>
-        </Form.Submit>
-      </div>
-    </Form.Root>
+      </form>
+    </Card>
   );
 }
