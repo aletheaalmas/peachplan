@@ -49,7 +49,7 @@ export function ProjectItem({ project }: { project: Project }) {
   return (
     <Card className={`min-h-[140px] ${projectCard}`}>
       <CardContent className="p-3">
-        {/* Header */}
+
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1">
             <Badge
@@ -79,12 +79,11 @@ export function ProjectItem({ project }: { project: Project }) {
           </Button>
         </div>
 
-        {/* Title */}
+
         <h2 className="mt-2 text-sm font-semibold leading-tight text-gray-800">
           {project.title}
         </h2>
 
-        {/* Description */}
         <p className="mt-1 line-clamp-3 text-xs leading-snug text-gray-600">
           {project.description}
         </p>
