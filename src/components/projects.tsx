@@ -45,34 +45,36 @@ export function Projects() {
 export function ProjectItem({ project }: { project: Project }) {
   const projectCard = priorityColorMap[project.priority];
   return (
-    <div className={`h-40 rounded-2xl p-4 text-sm ${projectCard}`}>
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-1">
-          <span className="rounded-md bg-orange-100 px-2 py-0.5 text-[10px] font-medium text-red-400">
-            {project.priority}
-          </span>
+    <Card className={`h-40 ${projectCard}`}>
+      <CardContent className="p-4 text-sm">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-1">
+            <span className="rounded-md bg-orange-100 px-2 py-0.5 text-[10px] font-medium text-red-400">
+              {project.priority}
+            </span>
 
-          <span className="rounded-md bg-orange-100 px-2 py-0.5 text-[10px] font-medium text-gray-600">
-            {new Intl.DateTimeFormat("en-US", {
-              month: "short",
-              day: "numeric",
-            }).format(project.dueDate)}
-          </span>
+            <span className="rounded-md bg-orange-100 px-2 py-0.5 text-[10px] font-medium text-gray-600">
+              {new Intl.DateTimeFormat("en-US", {
+                month: "short",
+                day: "numeric",
+              }).format(project.dueDate)}
+            </span>
+          </div>
+          <div className="flex items-center gap-2 text-gray-500">
+            <button className="text-gray-500 hover:text-gray-800">
+              <ProjectActions />
+            </button>
+          </div>
         </div>
-        <div className="flex items-center gap-2 text-gray-500">
-          <button className="text-gray-500 hover:text-gray-800">
-            <ProjectActions />
-          </button>
-        </div>
-      </div>
 
-      <h2 className="mt-3 text-base font-semibold text-gray-800">
-        {project.title}
-      </h2>
+        <h2 className="text-base font-semibold text-gray-800">
+          {project.title}
+        </h2>
 
-      <p className="mt-1 line-clamp-3 text-xs text-gray-600">
-        {project.description}
-      </p>
-    </div>
+        <p className="line-clamp-3 text-xs text-gray-600">
+          {project.description}
+        </p>
+      </CardContent>
+    </Card>
   );
 }
