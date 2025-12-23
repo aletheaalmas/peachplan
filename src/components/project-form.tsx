@@ -1,5 +1,5 @@
 import * as Form from "@radix-ui/react-form";
-import { Button } from "./button";
+import { Button } from "@/components/ui/button";
 
 export function ProjectForm() {
   return (
@@ -40,26 +40,9 @@ export function ProjectForm() {
 
           {/* Pills */}
           <div className="absolute bottom-3 left-4 flex gap-2">
-            <button
-              type="button"
-              className="rounded-full px-3 py-1 text-[10px] text-gray-500 hover:bg-gray-200"
-            >
-              Deadline
-            </button>
-
-            <button
-              type="button"
-              className="rounded-full px-3 py-1 text-[10px] text-gray-500 hover:bg-gray-200"
-            >
-              Priority
-            </button>
-
-            <button
-              type="button"
-              className="rounded-full px-3 py-1 text-[10px] text-gray-500 hover:bg-gray-200"
-            >
-              Stage
-            </button>
+            <Button variant="secondary">Deadline</Button>
+            <Button variant="secondary">Priority</Button>
+            <Button variant="secondary">Status</Button>
           </div>
         </div>
       </Form.Field>
