@@ -3,6 +3,7 @@ import type { Project } from "../modules/project/type";
 import type { ProjectStatus } from "../modules/project/type";
 import { ProjectActions } from "./project-actions";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const status: ProjectStatus[] = ["To Do", "In Progress", "In Review", "Done"];
 
@@ -49,16 +50,16 @@ export function ProjectItem({ project }: { project: Project }) {
       <CardContent className="p-4 text-sm">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1">
-            <span className="rounded-md bg-orange-100 px-2 py-0.5 text-[10px] font-medium text-red-400">
+            <Badge variant="secondary" className="text-[10px]">
               {project.priority}
-            </span>
+            </Badge>
 
-            <span className="rounded-md bg-orange-100 px-2 py-0.5 text-[10px] font-medium text-gray-600">
+            <Badge variant="secondary" className="text-[10px]">
               {new Intl.DateTimeFormat("en-US", {
                 month: "short",
                 day: "numeric",
               }).format(project.dueDate)}
-            </span>
+            </Badge>
           </div>
           <div className="flex items-center gap-2 text-gray-500">
             <button className="text-gray-500 hover:text-gray-800">
