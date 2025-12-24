@@ -3,6 +3,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { FieldLabel } from "@/components/ui/field";
 import { Card } from "@/components/ui/card";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export function ProjectForm() {
   return (
@@ -17,9 +23,39 @@ export function ProjectForm() {
         />
 
         <div className="flex gap-2">
-          <Button variant="secondary">Deadline</Button>
-          <Button variant="secondary">Priority</Button>
-          <Button variant="secondary">Status</Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Button variant="secondary">Deadline</Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent></DropdownMenuContent>
+          </DropdownMenu>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Button variant="secondary">Priority</Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              {" "}
+              <DropdownMenuItem>P0</DropdownMenuItem>
+              <DropdownMenuItem>P1</DropdownMenuItem>
+              <DropdownMenuItem>P2</DropdownMenuItem>
+              <DropdownMenuItem>P3</DropdownMenuItem>
+              <DropdownMenuItem>P4</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Button variant="secondary">Status</Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              {" "}
+              <DropdownMenuItem>To Do</DropdownMenuItem>
+              <DropdownMenuItem>In Progress</DropdownMenuItem>
+              <DropdownMenuItem>In Review</DropdownMenuItem>
+              <DropdownMenuItem>Done</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
 
         <div className="flex justify-end">
