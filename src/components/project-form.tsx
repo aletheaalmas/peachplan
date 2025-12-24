@@ -5,11 +5,14 @@ import { FieldLabel } from "@/components/ui/field";
 import { SelectDate } from "./select-date";
 import { Card } from "@/components/ui/card";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export function ProjectForm() {
   return (
@@ -25,33 +28,36 @@ export function ProjectForm() {
 
         <div className="flex gap-2">
           <SelectDate />
+          <Select>
+            <SelectTrigger className="w-[120px]">
+              <SelectValue placeholder="Priority" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Priority</SelectLabel>
+                <SelectItem value="P0">P0</SelectItem>
+                <SelectItem value="P1">P1</SelectItem>
+                <SelectItem value="P2">P2</SelectItem>
+                <SelectItem value="P3">P3</SelectItem>
+                <SelectItem value="P4">P4</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
 
-          <DropdownMenu>
-            <DropdownMenuTrigger>
-              <Button variant="secondary">Priority</Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              {" "}
-              <DropdownMenuItem>P0</DropdownMenuItem>
-              <DropdownMenuItem>P1</DropdownMenuItem>
-              <DropdownMenuItem>P2</DropdownMenuItem>
-              <DropdownMenuItem>P3</DropdownMenuItem>
-              <DropdownMenuItem>P4</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          <DropdownMenu>
-            <DropdownMenuTrigger>
-              <Button variant="secondary">Status</Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              {" "}
-              <DropdownMenuItem>To Do</DropdownMenuItem>
-              <DropdownMenuItem>In Progress</DropdownMenuItem>
-              <DropdownMenuItem>In Review</DropdownMenuItem>
-              <DropdownMenuItem>Done</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <Select>
+            <SelectTrigger className="w-[120px]">
+              <SelectValue placeholder="Status" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Status</SelectLabel>
+                <SelectItem value="To Do">To Do</SelectItem>
+                <SelectItem value="In Progress">In Progress</SelectItem>
+                <SelectItem value="In Review">In Review</SelectItem>
+                <SelectItem value="Done">Done</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
         </div>
 
         <div className="flex justify-end">
