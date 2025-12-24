@@ -17,7 +17,7 @@ export function ProjectActions() {
           <EllipsisVertical className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56" align="start">
+      <DropdownMenuContent className="w-[120px]" align="start">
         <DropdownMenuGroup>
           <DropdownMenuItem>View</DropdownMenuItem>
           <DropdownMenuItem>Edit</DropdownMenuItem>
