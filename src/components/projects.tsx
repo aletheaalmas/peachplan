@@ -23,10 +23,25 @@ const priorityColorMap: Record<Project["priority"], string> = {
 export function Projects() {
   const [projects, setProjects] = useState(initialDataProjects);
 
+  function handleAddProject() {
+    const newProject: Project = {
+      id: 11,
+      title: "Example Thing",
+      status: "To Do",
+      priority: "P2",
+      description: "Just an example project.",
+      dueDate: new Date(),
+    };
+
+    const updatedProjects = [...projects, newProject];
+
+    setProjects(updatedProjects);
+  }
+
   return (
     <section className="space-y-2">
       <div>
-        <Button>Add Placeholder Project</Button>
+        <Button onClick={handleAddProject}>Add Placeholder Project</Button>
       </div>
 
       <ul className="grid grid-cols-4 items-start gap-4">
