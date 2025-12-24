@@ -4,7 +4,7 @@ import type { ProjectStatus } from "../modules/project/type";
 import { ProjectActions } from "./project-actions";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+
 
 const status: ProjectStatus[] = ["To Do", "In Progress", "In Review", "Done"];
 
@@ -18,12 +18,9 @@ const priorityColorMap: Record<Project["priority"], string> = {
 
 export function Projects() {
   return (
-    <div className="mt-6 grid grid-cols-4 gap-4 items-start">
+    <div className="mt-6 grid grid-cols-4 items-start gap-4">
       {status.map((status) => (
-        <div
-          key={status}
-          className="rounded-2xl border bg-stone-50 p-3"
-        >
+        <div key={status} className="rounded-2xl border bg-stone-50 p-3">
           <h3 className="mb-3 text-center text-sm font-semibold text-gray-700">
             {status}
           </h3>
@@ -40,16 +37,15 @@ export function Projects() {
         </div>
       ))}
     </div>
-  )
+  );
 }
 
 export function ProjectItem({ project }: { project: Project }) {
-  const projectCard = priorityColorMap[project.priority]
+  const projectCard = priorityColorMap[project.priority];
 
   return (
     <Card className={`min-h-[140px] ${projectCard}`}>
       <CardContent className="p-3">
-
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1">
             <Badge
@@ -70,17 +66,10 @@ export function ProjectItem({ project }: { project: Project }) {
             </Badge>
           </div>
 
-          <Button
-            variant="ghost"
-            size="icon"
-            className="h-6 w-6"
-          >
-            <ProjectActions />
-          </Button>
+          <ProjectActions />
         </div>
 
-
-        <h2 className="mt-2 text-sm font-semibold leading-tight text-gray-800">
+        <h2 className="mt-2 text-sm leading-tight font-semibold text-gray-800">
           {project.title}
         </h2>
 
@@ -89,6 +78,5 @@ export function ProjectItem({ project }: { project: Project }) {
         </p>
       </CardContent>
     </Card>
-  )
+  );
 }
-
