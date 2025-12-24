@@ -1,3 +1,6 @@
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+
 export function Welcome() {
   const today = new Date();
   const fullDate = today.toLocaleDateString("en-US", {
@@ -25,6 +28,30 @@ export function Welcome() {
           <p className="text-gray-600">{fullDate}</p>
         </div>
       </div>
+
+      <CounterButton />
+    </div>
+  );
+}
+
+export function ExampleButton() {
+  function handleClickExample() {
+    console.log("Example!");
+  }
+
+  return <Button onClick={handleClickExample}>Example Button</Button>;
+}
+
+export function CounterButton() {
+  const [count, setCount] = useState(0);
+
+  function handleIncrement() {
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      <Button onClick={handleIncrement}>Count: {count}</Button>
     </div>
   );
 }
