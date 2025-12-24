@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { FieldLabel } from "@/components/ui/field";
+import { SelectDate } from "./select-date";
 import { Card } from "@/components/ui/card";
 import {
   DropdownMenu,
@@ -23,12 +24,7 @@ export function ProjectForm() {
         />
 
         <div className="flex gap-2">
-          <DropdownMenu>
-            <DropdownMenuTrigger>
-              <Button variant="secondary">Deadline</Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent></DropdownMenuContent>
-          </DropdownMenu>
+          <SelectDate />
 
           <DropdownMenu>
             <DropdownMenuTrigger>
