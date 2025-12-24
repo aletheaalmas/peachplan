@@ -1,4 +1,5 @@
 import { EllipsisVertical } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,11 +9,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export function DropdownMenuDemo() {
+export function ProjectActions() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <EllipsisVertical size={14} />
+        <Button variant="ghost" size="icon" className="h-6 w-6">
+          <EllipsisVertical className="h-4 w-4" />
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56" align="start">
         <DropdownMenuGroup>
@@ -20,7 +23,7 @@ export function DropdownMenuDemo() {
           <DropdownMenuItem>Edit</DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>Delete</DropdownMenuItem>
+        <DropdownMenuItem className="text-red-600">Delete</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
