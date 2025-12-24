@@ -22,7 +22,7 @@ export function SelectDate() {
           <Button
             variant="outline"
             id="date"
-            className="w-48 justify-between font-normal"
+            className="w-[120px] justify-between font-normal"
           >
             {date ? date.toLocaleDateString() : "Deadline"}
             <ChevronDownIcon />
