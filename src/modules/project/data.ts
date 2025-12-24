@@ -1,6 +1,6 @@
 import type { Projects } from "./type";
 
-export const dataProjects: Projects = [
+export const initialDataProjects: Projects = [
   {
     id: 1,
     title: "Personal Web",

@@ -1,10 +1,12 @@
-import { dataProjects } from "../modules/project/data";
+import { initialDataProjects } from "../modules/project/data";
 import type { Project } from "../modules/project/type";
 import type { ProjectStatus } from "../modules/project/type";
 import { ProjectActions } from "./project-actions";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { Button } from "./ui/button";
+import { useState } from "react";
 
 const statuses: ProjectStatus[] = ["To Do", "In Progress", "In Review", "Done"];
 
@@ -19,26 +21,34 @@ const priorityColorMap: Record<Project["priority"], string> = {
 // text-red-900 text-rose-900 text-purple-900 text-blue-900 text-lime-900
 
 export function Projects() {
-  return (
-    <div className="mt-6 grid grid-cols-4 items-start gap-4">
-      {statuses.map((status) => (
-        <div key={status} className="rounded-2xl border bg-stone-50 p-3">
-          <h3 className="mb-3 text-center text-sm font-semibold text-gray-700">
-            {status}
-          </h3>
+  const [projects, setProjects] = useState(initialDataProjects);
 
-          <ul className="space-y-3">
-            {dataProjects
-              .filter((project) => project.status === status)
-              .map((project) => (
-                <li key={project.id}>
-                  <ProjectItem project={project} />
-                </li>
-              ))}
-          </ul>
-        </div>
-      ))}
-    </div>
+  return (
+    <section className="space-y-2">
+      <div>
+        <Button>Add Placeholder Project</Button>
+      </div>
+
+      <ul className="grid grid-cols-4 items-start gap-4">
+        {statuses.map((status) => (
+          <li key={status} className="rounded-2xl border bg-stone-50 p-3">
+            <h3 className="mb-3 text-center text-sm font-semibold text-gray-700">
+              {status}
+            </h3>
+
+            <ul className="space-y-3">
+              {projects
+                .filter((project) => project.status === status)
+                .map((project) => (
+                  <li key={project.id}>
+                    <ProjectItem project={project} />
+                  </li>
+                ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 
