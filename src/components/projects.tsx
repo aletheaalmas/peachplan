@@ -4,17 +4,19 @@ import type { ProjectStatus } from "../modules/project/type";
 import { ProjectActions } from "./project-actions";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-
+import { cn } from "@/lib/utils";
 
 const status: ProjectStatus[] = ["To Do", "In Progress", "In Review", "Done"];
 
 const priorityColorMap: Record<Project["priority"], string> = {
-  P0: "bg-red-200",
-  P1: "bg-rose-100",
-  P2: "bg-purple-100",
-  P3: "bg-blue-100",
-  P4: "bg-lime-100",
+  P0: "red",
+  P1: "rose",
+  P2: "purple",
+  P3: "blue",
+  P4: "lime",
 };
+// bg-red-100 bg-rose-100 bg-purple-100 bg-blue-100 bg-lime-100
+// text-red-900 text-rose-900 text-purple-900 text-blue-900 text-lime-900
 
 export function Projects() {
   return (
@@ -44,7 +46,12 @@ export function ProjectItem({ project }: { project: Project }) {
   const projectCard = priorityColorMap[project.priority];
 
   return (
-    <Card className={`min-h-[140px] ${projectCard}`}>
+    <Card
+      className={cn(
+        "min-h-[140px]",
+        projectCard ? `bg-${projectCard}-100 text-${projectCard}-900` : "",
+      )}
+    >
       <CardContent className="p-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1">
@@ -69,11 +76,11 @@ export function ProjectItem({ project }: { project: Project }) {
           <ProjectActions />
         </div>
 
-        <h2 className="mt-2 text-sm leading-tight font-semibold text-gray-800">
+        <h2 className="mt-2 text-sm leading-tight font-semibold">
           {project.title}
         </h2>
 
-        <p className="mt-1 line-clamp-3 text-xs leading-snug text-gray-600">
+        <p className="mt-1 line-clamp-3 text-xs leading-snug">
           {project.description}
         </p>
       </CardContent>
