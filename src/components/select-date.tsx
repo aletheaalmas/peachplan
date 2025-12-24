@@ -24,7 +24,7 @@ export function SelectDate() {
             id="date"
             className="w-48 justify-between font-normal"
           >
-            {date ? date.toLocaleDateString() : "Select date"}
+            {date ? date.toLocaleDateString() : "Deadline"}
             <ChevronDownIcon />
           </Button>
         </PopoverTrigger>
