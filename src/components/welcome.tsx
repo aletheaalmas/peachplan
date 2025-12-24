@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 export function Welcome() {
   const today = new Date();
   const fullDate = today.toLocaleDateString("en-US", {
@@ -25,6 +27,16 @@ export function Welcome() {
           <p className="text-gray-600">{fullDate}</p>
         </div>
       </div>
+
+      <ExampleButton />
     </div>
   );
+}
+
+export function ExampleButton() {
+  function handleClickExample() {
+    console.log("Example!");
+  }
+
+  return <Button onClick={handleClickExample}>Example Button</Button>;
 }
