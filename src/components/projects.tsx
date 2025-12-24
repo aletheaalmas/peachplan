@@ -48,7 +48,7 @@ export function ProjectItem({ project }: { project: Project }) {
   return (
     <Card
       className={cn(
-        "min-h-[140px]",
+        "min-h-[140px] py-0",
         projectCard ? `bg-${projectCard}-100 text-${projectCard}-900` : "",
       )}
     >
