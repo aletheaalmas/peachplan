@@ -13,7 +13,7 @@ import {
 
 export function ProjectForm() {
   return (
-    <Card className="rounded-2xl bg-stone-50 p-6">
+    <Card className="rounded-2x p-6">
       <form className="space-y-4">
         <FieldLabel>Project Name</FieldLabel>
         <Input placeholder="Name your project" />
