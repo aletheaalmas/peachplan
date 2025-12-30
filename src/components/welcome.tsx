@@ -11,7 +11,7 @@ export function Welcome() {
   });
 
   return (
-    <div className="mt-2 rounded-2xl border border-gray-200 px-6 py-5">
+    <div className="bg-stone-50 mt-2 rounded-2xl border border-gray-200 px-6 py-5">
       <div className="flex items-start justify-between">
         <div>
           <h2 className="text-xl font-semibold">Welcome,</h2>

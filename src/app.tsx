@@ -6,7 +6,7 @@ import { AddProjectDialog } from "./components/add-project-dialog";
 export function App() {
   return (
     <>
-      <header className="w-full border-b border-gray-200 bg-red-200">
+      <header className="w-full border-b border-gray-200 bg-red-300">
         <nav className="mx-auto flex max-w-4xl items-center justify-between px-3 py-2">
           <a href="/">
             <img
