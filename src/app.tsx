@@ -1,7 +1,7 @@
 import { SearchBar } from "./components/search-bar";
 import { Projects } from "./components/projects";
 // import { Welcome } from "./components/welcome";
-import { AddProjectDialog } from "./components/add-project-dialog";
+// import { AddProjectDialog } from "./components/add-project-dialog";
 import { ProjectForm } from "./components/project-form";
 
 export function App() {
@@ -22,7 +22,7 @@ export function App() {
           <SearchBar />
 
           <div className="flex justify-between gap-4">
-            <AddProjectDialog />
+            {/* <AddProjectDialog /> */}
             <button className="h-10 w-10 overflow-hidden rounded-full bg-gray-100">
               <img
                 className="object-cover"

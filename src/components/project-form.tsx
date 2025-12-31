@@ -13,8 +13,28 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useState } from "react";
+import { initialDataProjects } from "@/modules/project/data";
+import type { Project } from "../modules/project/type";
 
 export function ProjectForm() {
+  const [projects, setProjects] = useState(initialDataProjects);
+
+  function handleAddProject() {
+    const newProject: Project = {
+      id: 11,
+      title: "Example Project",
+      status: "To Do",
+      priority: "P1",
+      description: "just an example",
+      dueDate: new Date(),
+    };
+
+    const updatedProjects = [...projects, newProject];
+
+    setProjects(updatedProjects);
+  }
+
   return (
     <Card className="rounded-2x p-6">
       <form className="space-y-4">
@@ -61,7 +81,9 @@ export function ProjectForm() {
         </div>
 
         <div className="flex justify-end">
-          <Button type="submit">+ Add Project</Button>
+          <Button type="submit" onClick={handleAddProject}>
+            + Add Project
+          </Button>
         </div>
       </form>
     </Card>
