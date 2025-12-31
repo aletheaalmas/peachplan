@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 export function Welcome() {
   const today = new Date();
   const fullDate = today.toLocaleDateString("en-US", {
@@ -11,7 +13,7 @@ export function Welcome() {
   });
 
   return (
-    <div className="bg-stone-50 mt-2 rounded-2xl border border-gray-200 px-6 py-5">
+    <div className="mt-2 rounded-2xl border border-gray-200 bg-stone-50 px-6 py-5">
       <div className="flex items-start justify-between">
         <div>
           <h2 className="text-xl font-semibold">Welcome,</h2>
@@ -25,6 +27,15 @@ export function Welcome() {
           <p className="text-gray-600">{fullDate}</p>
         </div>
       </div>
+
+      <ExampleButton />
     </div>
   );
+}
+
+export function ExampleButton() {
+  function handleClickExample() {
+    console.log("Example!");
+  }
+  return <Button onClick={handleClickExample}>Example Button</Button>;
 }
