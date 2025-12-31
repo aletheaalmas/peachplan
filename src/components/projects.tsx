@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
-const status: ProjectStatus[] = ["To Do", "In Progress", "In Review", "Done"];
+const statuses: ProjectStatus[] = ["To Do", "In Progress", "In Review", "Done"];
 
 const priorityColorMap: Record<Project["priority"], string> = {
   P0: "red",
@@ -22,7 +22,7 @@ const priorityColorMap: Record<Project["priority"], string> = {
 export function Projects() {
   return (
     <div className="mt-6 grid grid-cols-4 items-start gap-4">
-      {status.map((status) => (
+      {statuses.map((status) => (
         <div key={status} className="rounded-2xl border bg-stone-50 p-3">
           <h3 className="mb-3 text-center text-sm font-semibold text-gray-700">
             {status}
@@ -50,7 +50,7 @@ export function ProjectItem({ project }: { project: Project }) {
     <Card
       className={cn(
         "min-h-[140px]",
-        projectCard ? `bg-${projectCard}-100 text-${projectCard}-900` : "",
+        projectCard ? `bg-${projectCard}-200 text-${projectCard}-900` : "",
       )}
     >
       <CardContent className="p-3">
