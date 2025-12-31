@@ -34,7 +34,7 @@ export function App() {
           </div>
         </nav>
       </header>
-      <main className="mx-auto max-w-4xl p-4">
+      <main className="mx-auto max-w-4xl space-y-8 p-4">
         <Welcome />
 
         <Projects />
