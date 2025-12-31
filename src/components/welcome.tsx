@@ -29,18 +29,18 @@ export function Welcome() {
         </div>
       </div>
 
-      <ExampleButton />
+      {/* <ExampleButton /> */}
       <CounterButton />
     </div>
   );
 }
 
-export function ExampleButton() {
-  function handleClickExample() {
-    console.log("Example!");
-  }
-  return <Button onClick={handleClickExample}>Example Button</Button>;
-}
+// export function ExampleButton() {
+//   function handleClickExample() {
+//     console.log("Example!");
+//   }
+//   return <Button onClick={handleClickExample}>Example Button</Button>;
+// }
 
 export function CounterButton() {
   const [count, setCount] = useState(0);
