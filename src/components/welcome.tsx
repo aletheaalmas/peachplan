@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 export function Welcome() {
   const today = new Date();
@@ -29,6 +30,7 @@ export function Welcome() {
       </div>
 
       <ExampleButton />
+      <CounterButton />
     </div>
   );
 }
@@ -38,4 +40,17 @@ export function ExampleButton() {
     console.log("Example!");
   }
   return <Button onClick={handleClickExample}>Example Button</Button>;
+}
+
+export function CounterButton() {
+  const [count, setCount] = useState(0);
+
+  function handleIncrement() {
+    setCount(count + 1);
+  }
+  return (
+    <div>
+      <Button onClick={handleIncrement}>Count :{count}</Button>
+    </div>
+  );
 }
