@@ -2,6 +2,7 @@ import { SearchBar } from "./components/search-bar";
 import { Projects } from "./components/projects";
 // import { Welcome } from "./components/welcome";
 import { AddProjectDialog } from "./components/add-project-dialog";
+import { ProjectForm } from "./components/project-form";
 
 export function App() {
   return (
@@ -36,6 +37,7 @@ export function App() {
       </header>
       <main className="mx-auto max-w-4xl space-y-8 p-4">
         {/* <Welcome /> */}
+        <ProjectForm />
 
         <Projects />
       </main>
