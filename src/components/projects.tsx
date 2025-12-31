@@ -12,22 +12,43 @@ const statuses: ProjectStatus[] = ["To Do", "In Progress", "In Review", "Done"];
 
 const priorityColorMap: Record<Project["priority"], string> = {
   P0: "red",
-  P1: "rose",
+  P1: "orange",
   P2: "purple",
   P3: "blue",
   P4: "lime",
 };
 
-// bg-red-200 bg-rose-200 bg-purple-200 bg-blue-200 bg-lime-200
-// text-red-900 text-rose-900 text-purple-900 text-blue-900 text-lime-900
+// bg-red-200 bg-orange-200 bg-purple-200 bg-blue-200 bg-lime-200
+// text-red-900 text-orange-900 text-purple-900 text-blue-900 text-lime-900
 
 export function Projects() {
   const [projects, setProjects] = useState(initialDataProjects);
 
+  function handleAddProject() {
+    const newProject: Project = {
+      id: 11,
+      title: "Example Project",
+      status: "To Do",
+      priority: "P1",
+      description: "just an example",
+      dueDate: new Date(),
+    };
+
+    const updatedProjects = [...projects, newProject];
+
+    setProjects(updatedProjects);
+  }
+
+  function handleDeleteProject(id: number) {
+    const updatedProjects = projects.filter((project) => project.id !== id);
+
+    setProjects(updatedProjects);
+  }
+
   return (
     <section className="space-y-2">
       <div>
-        <Button>Add Project Card</Button>
+        <Button onClick={handleAddProject}>Add Project Card</Button>
       </div>
       <ul className="grid grid-cols-4 items-start gap-4">
         {statuses.map((status) => (
@@ -41,7 +62,10 @@ export function Projects() {
                 .filter((project) => project.status === status)
                 .map((project) => (
                   <li key={project.id}>
-                    <ProjectItem project={project} />
+                    <ProjectItem
+                      project={project}
+                      onDelete={handleDeleteProject}
+                    />
                   </li>
                 ))}
             </ul>
@@ -52,7 +76,13 @@ export function Projects() {
   );
 }
 
-export function ProjectItem({ project }: { project: Project }) {
+export function ProjectItem({
+  project,
+  onDelete,
+}: {
+  project: Project;
+  onDelete: (id: number) => void;
+}) {
   const projectCard = priorityColorMap[project.priority];
 
   return (
@@ -83,7 +113,7 @@ export function ProjectItem({ project }: { project: Project }) {
             </Badge>
           </div>
 
-          <ProjectActions />
+          <ProjectActions onDelete={() => onDelete(project.id)} />
         </div>
 
         <h2 className="mt-2 text-sm leading-tight font-semibold">
