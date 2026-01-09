@@ -24,9 +24,14 @@ const priorityColorMap: Record<Project["priority"], string> = {
 export function Projects() {
   const [projects, setProjects] = useState(initialDataProjects);
 
+  function generateId(items: Project[]) {
+    const newId = items[items.length - 1].id + 1;
+    return newId;
+  }
+
   function handleAddProject() {
     const newProject: Project = {
-      id: 11,
+      id: generateId(projects),
       title: "Example Project",
       status: "To Do",
       priority: "P1",
