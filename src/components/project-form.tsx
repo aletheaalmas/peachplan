@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { FieldLabel } from "@/components/ui/field";
-import { SelectDate } from "./select-date";
 import { Card } from "@/components/ui/card";
 import {
   Select,
@@ -13,9 +11,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import type { Project } from "../modules/project/type";
+import type { Project } from "@/modules/project/type";
 import { useState } from "react";
-import { initialDataProjects } from "../modules/project/data";
+import { initialDataProjects } from "@/modules/project/data";
+import { Label } from "@/components/ui/label";
 
 export function ProjectForm() {
   const [projects] = useState(initialDataProjects);
@@ -43,7 +42,7 @@ export function ProjectForm() {
   return (
     <Card className="rounded-2xl p-6">
       <form className="space-y-4" method="post" onSubmit={handleAddProject}>
-        <FieldLabel htmlFor="title">Project Name</FieldLabel>
+        <Label htmlFor="title">Project Name</Label>
         <Input
           id="title"
           type="text"
@@ -51,7 +50,7 @@ export function ProjectForm() {
           placeholder="Name your project"
         />
 
-        <FieldLabel>Project Description</FieldLabel>
+        <Label>Project Description</Label>
         <Textarea
           name="description"
           placeholder="Add some notes or description..."
@@ -59,7 +58,6 @@ export function ProjectForm() {
         />
 
         <div className="flex gap-2">
-          <SelectDate />
           <Select>
             <SelectTrigger className="w-[120px]">
               <SelectValue placeholder="Priority" />
