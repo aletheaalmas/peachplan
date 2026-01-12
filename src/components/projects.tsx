@@ -1,12 +1,12 @@
-import { initialDataProjects } from "../modules/project/data";
-import type { Project } from "../modules/project/type";
-import type { ProjectStatus } from "../modules/project/type";
-import { ProjectActions } from "./project-actions";
+import { useState } from "react";
+
+import { initialDataProjects } from "@/modules/project/data";
+import type { Project } from "@/modules/project/type";
+import type { ProjectStatus } from "@/modules/project/type";
+import { ProjectActions } from "@/components/project-actions";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { useState } from "react";
 
 const statuses: ProjectStatus[] = ["To Do", "In Progress", "In Review", "Done"];
 
@@ -18,31 +18,12 @@ const priorityColorMap: Record<Project["priority"], string> = {
   P4: "lime",
 };
 
+// Necessary Tailwind CSS colors:
 // bg-red-200 bg-orange-200 bg-purple-200 bg-blue-200 bg-lime-200
 // text-red-900 text-orange-900 text-purple-900 text-blue-900 text-lime-900
 
 export function Projects() {
   const [projects, setProjects] = useState(initialDataProjects);
-
-  function generateId(items: Project[]) {
-    const newId = items[items.length - 1].id + 1;
-    return newId;
-  }
-
-  function handleAddProject() {
-    const newProject: Project = {
-      id: generateId(projects),
-      title: "Example Project",
-      status: "To Do",
-      priority: "P1",
-      description: "just an example",
-      dueDate: new Date(),
-    };
-
-    const updatedProjects = [...projects, newProject];
-
-    setProjects(updatedProjects);
-  }
 
   function handleDeleteProject(id: number) {
     const updatedProjects = projects.filter((project) => project.id !== id);
@@ -52,9 +33,6 @@ export function Projects() {
 
   return (
     <section className="space-y-2">
-      <div>
-        <Button onClick={handleAddProject}>Add Project Card</Button>
-      </div>
       <ul className="grid grid-cols-4 items-start gap-4">
         {statuses.map((status) => (
           <div key={status} className="rounded-2xl border bg-stone-50 p-3">
