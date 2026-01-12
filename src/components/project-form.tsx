@@ -21,7 +21,7 @@ export function ProjectForm() {
   const [projects] = useState(initialDataProjects);
 
   function generateId(items: Project[]) {
-    const newId = items[items.length - 1].id + 1;
+    const newId = Text.length > 0 ? items[items.length - 1].id + 1 : 1;
     return newId;
   }
 
