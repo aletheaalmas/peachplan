@@ -20,9 +20,14 @@ import type { Project } from "../modules/project/type";
 export function ProjectForm() {
   const [projects, setProjects] = useState(initialDataProjects);
 
+  function generateId(items: Project[]) {
+    const newId = items[items.length - 1].id + 1;
+    return newId;
+  }
+
   function handleAddProject() {
     const newProject: Project = {
-      id: 11,
+      id: generateId(projects),
       title: "Example Project",
       status: "To Do",
       priority: "P1",
@@ -38,13 +43,15 @@ export function ProjectForm() {
   return (
     <Card className="rounded-2x p-6">
       <form className="space-y-4">
-        <FieldLabel>Project Name</FieldLabel>
-        <Input placeholder="Name your project" />
-        <FieldLabel>Project Description</FieldLabel>
-        <Textarea
-          placeholder="Add some notes or description..."
-          className="min-h-[120px]"
-        />
+       
+          <FieldLabel htmlFor="title">Project Name</FieldLabel>
+          <Input id="title" type="title" name="title" placeholder="Name your project" />
+          <FieldLabel>Project Description</FieldLabel>
+          <Textarea
+            placeholder="Add some notes or description..."
+            className="min-h-[120px]"
+          />
+        
 
         <div className="flex gap-2">
           <SelectDate />
