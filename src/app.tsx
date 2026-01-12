@@ -1,10 +1,21 @@
-import { SearchBar } from "./components/search-bar";
-import { Projects } from "./components/projects";
-// import { Welcome } from "./components/welcome";
-// import { AddProjectDialog } from "./components/add-project-dialog";
-import { ProjectForm } from "./components/project-form";
+// TODO: import { useState } from "react";
+
+import { SearchBar } from "@/components/search-bar";
+import { Projects } from "@/components/projects";
+import { ProjectForm } from "@/components/project-form";
+// TODO: import { initialDataProjects } from "@/modules/project/data";
 
 export function App() {
+  // TODO: const [projects, setProjects] = useState(initialDataProjects);
+
+  // TODO:
+  // handleAddProject() {
+  //   console.log("add project");
+  // }
+  // handleDeleteProject() {
+  //   console.log("delete project");
+  // }
+
   return (
     <>
       <header className="w-full border-b border-gray-200 bg-red-300">
@@ -22,7 +33,6 @@ export function App() {
           <SearchBar />
 
           <div className="flex justify-between gap-4">
-            {/* <AddProjectDialog /> */}
             <button className="h-10 w-10 overflow-hidden rounded-full bg-gray-100">
               <img
                 className="object-cover"
@@ -36,7 +46,6 @@ export function App() {
         </nav>
       </header>
       <main className="mx-auto max-w-4xl space-y-8 p-4">
-        {/* <Welcome /> */}
         <ProjectForm />
 
         <Projects />
