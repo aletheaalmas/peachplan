@@ -13,45 +13,50 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useState } from "react";
-import { initialDataProjects } from "@/modules/project/data";
 import type { Project } from "../modules/project/type";
+import { useState } from "react";
+import { initialDataProjects } from "../modules/project/data";
 
 export function ProjectForm() {
-  const [projects, setProjects] = useState(initialDataProjects);
+  const [projects] = useState(initialDataProjects);
 
   function generateId(items: Project[]) {
     const newId = items[items.length - 1].id + 1;
     return newId;
   }
 
-  function handleAddProject() {
-    const newProject: Project = {
+  function handleAddProject(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const newProject = {
       id: generateId(projects),
-      title: "Example Project",
+      title: formData.get("title") as string,
       status: "To Do",
       priority: "P1",
-      description: "just an example",
+      description: formData.get("description") as string,
       dueDate: new Date(),
     };
 
-    const updatedProjects = [...projects, newProject];
-
-    setProjects(updatedProjects);
+    console.log(newProject);
   }
 
   return (
-    <Card className="rounded-2x p-6">
-      <form className="space-y-4">
-       
-          <FieldLabel htmlFor="title">Project Name</FieldLabel>
-          <Input id="title" type="title" name="title" placeholder="Name your project" />
-          <FieldLabel>Project Description</FieldLabel>
-          <Textarea
-            placeholder="Add some notes or description..."
-            className="min-h-[120px]"
-          />
-        
+    <Card className="rounded-2xl p-6">
+      <form className="space-y-4" method="post" onSubmit={handleAddProject}>
+        <FieldLabel htmlFor="title">Project Name</FieldLabel>
+        <Input
+          id="title"
+          type="text"
+          name="title"
+          placeholder="Name your project"
+        />
+
+        <FieldLabel>Project Description</FieldLabel>
+        <Textarea
+          name="description"
+          placeholder="Add some notes or description..."
+          className="min-h-[120px]"
+        />
 
         <div className="flex gap-2">
           <SelectDate />
@@ -88,9 +93,7 @@ export function ProjectForm() {
         </div>
 
         <div className="flex justify-end">
-          <Button type="submit" onClick={handleAddProject}>
-            + Add Project
-          </Button>
+          <Button type="submit">+ Add Project</Button>
         </div>
       </form>
     </Card>
